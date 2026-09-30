@@ -55,7 +55,7 @@ Este modo no persiste al cerrar la terminal:
 
 ```powershell
 $env:GITHUB_TOKEN="<TOKEN>"
-$env:GITHUB_OWNER="AlonsoMarcosM"
+$env:GITHUB_OWNER="alonsomarcosm99"
 $env:GITHUB_REPO="TFM_Alonso_Marcos_Mu-oz"
 ```
 
@@ -92,7 +92,7 @@ Este modo permite reutilizarlo en futuras sesiones sin pedirlo otra vez:
 
 ```powershell
 [Environment]::SetEnvironmentVariable("GITHUB_TOKEN", "<TOKEN>", "User")
-[Environment]::SetEnvironmentVariable("GITHUB_OWNER", "AlonsoMarcosM", "User")
+[Environment]::SetEnvironmentVariable("GITHUB_OWNER", "alonsomarcosm99", "User")
 [Environment]::SetEnvironmentVariable("GITHUB_REPO", "TFM_Alonso_Marcos_Mu-oz", "User")
 [Environment]::SetEnvironmentVariable("GITHUB_PROJECT_NUMBER", "6", "User")
 ```
@@ -116,7 +116,7 @@ Eliminar el token si quieres revocar el acceso local:
 Desde la raíz del repo:
 
 ```powershell
-python .\scripts\planning\bootstrap_github_project.py --project-number 6
+python .\scripts\planning\bootstrap_github_project.py --project-number 1
 ```
 
 La salida esperada es un JSON con conteos, preview de labels, milestones, issues y campos del proyecto. No toca GitHub si no se pasa `--apply`.
@@ -125,7 +125,7 @@ La salida esperada es un JSON con conteos, preview de labels, milestones, issues
 
 El script no es solo un reflejo local: con `--apply` usa la API de GitHub para crear o actualizar labels, milestones, issues, items del Project y los campos `Status`, `Fase TFM`, `Tipo TFM`, `fecha_inicio` y `fecha_fin`.
 
-Para actualizar el tablero real `https://github.com/users/AlonsoMarcosM/projects/6`, usa `--project-number 6`. Esto evita crear otro Project por error aunque cambie el título.
+Para actualizar el tablero real `https://github.com/users/alonsomarcosm99/projects/1`, usa `--project-number 1`. Esto evita crear otro Project por error aunque cambie el título.
 
 El script resuelve credenciales en este orden:
 
@@ -136,7 +136,7 @@ El script resuelve credenciales en este orden:
 Además, si existe `.env` en la raíz, lo carga antes de resolver `GITHUB_OWNER`, `GITHUB_REPO`, `GITHUB_PROJECT_NUMBER` y el token.
 
 ```powershell
-python .\scripts\planning\bootstrap_github_project.py --apply --project-number 6
+python .\scripts\planning\bootstrap_github_project.py --apply --project-number 1
 ```
 
 Si se crea un Project nuevo en otro entorno, puede omitirse `--project-number` y usar el título de `github_project_planificacion.json`.
@@ -176,7 +176,7 @@ Campos editables:
 Después vuelve a ejecutar:
 
 ```powershell
-python .\scripts\planning\bootstrap_github_project.py --apply --project-number 6
+python .\scripts\planning\bootstrap_github_project.py --apply --project-number 1
 ```
 
 ## Acciones Destructivas
@@ -185,14 +185,14 @@ Borrar todos los Projects v2 del owner:
 
 ```powershell
 $env:GITHUB_TOKEN="<TOKEN>"
-python .\scripts\planning\bootstrap_github_project.py --delete-projects --confirm DELETE_ALL_PROJECTS --owner AlonsoMarcosM
+python .\scripts\planning\bootstrap_github_project.py --delete-projects --confirm DELETE_ALL_PROJECTS --owner alonsomarcosm99
 ```
 
 Borrar milestones antiguas que no pertenecen al roadmap actual:
 
 ```powershell
 $env:GITHUB_TOKEN="<TOKEN>"
-python .\scripts\planning\bootstrap_github_project.py --delete-old-milestones --confirm DELETE_OLD_MILESTONES --owner AlonsoMarcosM --repo TFM_Alonso_Marcos_Mu-oz
+python .\scripts\planning\bootstrap_github_project.py --delete-old-milestones --confirm DELETE_OLD_MILESTONES --owner alonsomarcosm99 --repo TFM_Alonso_Marcos_Mu-oz
 ```
 
 ## Vistas Recomendadas
