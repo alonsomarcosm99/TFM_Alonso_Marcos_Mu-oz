@@ -1,5 +1,9 @@
 # Plataforma de Gobierno del Dato · OpenMetadata + DCAT-AP-ES (TFM UCLM 2026)
 
+**En una frase:** Capa de gobierno que elimina el paso manual entre un catálogo técnico y los portales de datos abiertos. Descubre tablas de PostgreSQL en OpenMetadata sobre Kubernetes (Kind y Helm), las enriquece desde una hoja CSV versionada, las sincroniza de forma idempotente con dry-run y apply y exporta un catálogo DCAT-AP-ES en JSON-LD validado con las shapes SHACL oficiales del perfil HVD, listo para federarse en datos.gob.es. Se despliega entero en unos 5 minutos desde un repositorio limpio y una consola Next.js permite operarlo sin línea de comandos.
+
+**In one sentence:** Governance layer that removes the manual step between a technical data catalog and open data portals. It discovers PostgreSQL tables in OpenMetadata on Kubernetes (Kind and Helm), enriches them from a versioned CSV sheet, syncs them idempotently with dry-run and apply and exports a DCAT-AP-ES JSON-LD catalog validated against the official SHACL shapes of the HVD profile, ready to federate into datos.gob.es. The full stack deploys in about 5 minutes from a clean repository and a Next.js console runs it without the command line.
+
 > **Despliegue público:** [Abrir consola](https://tfm-plataforma-gobierno-dato.vercel.app)
 
 > Trabajo Fin de Máster del *Máster Universitario en Big Data y Computación en la Nube* (UCLM). Plataforma **end-to-end** que toma activos técnicos descubiertos en **OpenMetadata** sobre **Kubernetes**, los gobierna desde una hoja funcional versionable, exporta el catálogo en **DCAT-AP-ES (JSON-LD)** y lo **valida con SHACL** contra el perfil oficial **HVD** del Gobierno de España. La salida es un archivo RDF listo para federarse en `datos.gob.es`, `data.europa.eu` o cualquier portal CKAN compatible.
